@@ -13,7 +13,7 @@ public class ProjectTest extends BaseTest {
     @Test
     public void projectCreationTest() {
         JsonObject projectResponse = ApiHelper.createProject(JsonHelper.createProjectJson("ProjectOne", "MyProjectOne", "false"));
-        ProjectPage projectPage = new ProjectPage(projectResponse);
+        ProjectPage projectPage = (ProjectPage) new ProjectPage(projectResponse).get();
         assertEquals(projectPage.getProjectName(), projectResponse.get("name").getAsString(), "Wrong project opened!");
     }
 

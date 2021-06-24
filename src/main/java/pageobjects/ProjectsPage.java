@@ -17,6 +17,16 @@ public class ProjectsPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Override
+    protected void load() {
+
+    }
+
+    @Override
+    protected void isLoaded() throws Error {
+
+    }
+
     public ArrayList<String> getProjectNamesList() {
         ArrayList<String> projectNamesList = new ArrayList<>();
         for (WebElement webElement : projectsTitles) {

@@ -2,9 +2,10 @@ package base;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.LoadableComponent;
 import setup.DriverHelper;
 
-public abstract class BasePage {
+public abstract class BasePage<T extends LoadableComponent<T>> extends LoadableComponent<T>  {
     private static final JavascriptExecutor JAVASCRIPT_EXECUTOR = (JavascriptExecutor) DriverHelper.get().getDriver();
     private static final Logger LOGGER = Logger.getLogger(BasePage.class);
     protected static final String BASE_URL = System.getProperty("selenium.url", "https://tree.taiga.io");

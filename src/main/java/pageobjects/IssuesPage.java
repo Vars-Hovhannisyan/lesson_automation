@@ -34,4 +34,14 @@ public class IssuesPage extends BasePage {
     public String getURL() {
         return BASE_URL + "/project/" + myProject.get("slug").getAsString() + "/issues";
     }
+
+    @Override
+    protected void load() {
+
+    }
+
+    @Override
+    protected void isLoaded() throws Error {
+
+    }
 }
